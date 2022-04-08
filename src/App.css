@@ -1,38 +1,41 @@
-.App {
-  text-align: center;
+.foodImage {
+  width: 100%;
+  height: 550px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.imageText {
+  position: absolute;
   color: white;
+  font-size: 50px;
+  z-index: 100;
+  left: 1000px;
+  top: 250px;
 }
 
-.App-link {
-  color: #61dafb;
+#signInButton {
+  position: absolute;
+  z-index: 100;
+  left: 1310px;
+  top: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#signUpButton {
+  position: absolute;
+  z-index: 100;
+  left: 1400px;
+  top: 30px;
+}
+
+.landingFoodContainer {
+  padding-top: 10px;
+  position: absolute;
+  left: 100px;
+}
+.signInText {
+  position: absolute;
+  left: 500px;
+  top: 1250px;
+}
+.foodNearYou {
+  padding-bottom: 5px;
 }
