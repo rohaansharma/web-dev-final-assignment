@@ -7,7 +7,7 @@ const FoodUnregisterUser = () => {
   let posts = ["", "", "", "", "", ""];
   let items = posts.map((post, index) => {
     return (
-      <Col>
+      <Col key={index}>
         <FoodCard url={food} />
       </Col>
     );

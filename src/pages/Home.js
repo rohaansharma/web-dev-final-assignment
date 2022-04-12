@@ -34,12 +34,13 @@ const Home = () => {
         >
           <FaUser size={23} />
         </Button>
-
-        <div className="landingFoodContainer">
-          <h2 className="foodNearYou">Food To Deliver Near You</h2>
-          <Row xs={1} md={3} className="g-3">
-            <FoodGrid />
-          </Row>
+        <div className="homePage">
+          <div className="landingFoodContainer">
+            <h2 className="foodNearYou">Food To Deliver Near You</h2>
+            <Row xs={1} md={3} className="g-3">
+              <FoodGrid />
+            </Row>
+          </div>
         </div>
       </div>
     );
