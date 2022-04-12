@@ -1,3 +1,9 @@
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .foodImage {
   width: 100%;
   height: 550px;
@@ -15,17 +21,15 @@
 #signInButton {
   position: absolute;
   z-index: 100;
-  left: 1310px;
-  top: 30px;
-}
-
-#signUpButton {
-  position: absolute;
-  z-index: 100;
   left: 1400px;
   top: 30px;
 }
-
+#logOutButton {
+  position: absolute;
+  z-index: 100;
+  left: 1410px;
+  top: 30px;
+}
 .landingFoodContainer {
   padding-top: 10px;
   position: absolute;
@@ -34,8 +38,29 @@
 .signInText {
   position: absolute;
   left: 500px;
-  top: 1250px;
+  top: 1350px;
+  padding-bottom: 50px;
 }
 .foodNearYou {
   padding-bottom: 5px;
+}
+.userInfo {
+  position: relative;
+  margin-top: 100px;
+  clear: left;
+  height: auto;
+  z-index: 0;
+  text-align: center;
+}
+.userIcon {
+  position: absolute;
+  z-index: 100;
+  left: 1350px;
+  top: 30px;
+}
+.homeButton {
+  position: absolute;
+  z-index: 100;
+  left: 1330px;
+  top: 30px;
 }
