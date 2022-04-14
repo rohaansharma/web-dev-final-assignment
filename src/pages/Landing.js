@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import food from "../images/food.jpg";
 import { Button } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
@@ -7,7 +7,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router-dom";
 
 const Landing = () => {
-  const { loginWithRedirect, isAuthenticated } = useAuth0();
+  const { isAuthenticated } = useAuth0();
   const navigate = useNavigate();
 
   if (isAuthenticated) {
@@ -21,7 +21,7 @@ const Landing = () => {
           variant="light"
           id="signInButton"
           onClick={() => {
-            loginWithRedirect();
+            navigate("/login");
           }}
         >
           LOGIN
@@ -29,8 +29,8 @@ const Landing = () => {
 
         <div className="landingFoodContainer">
           <h2 className="foodNearYou">Food To Deliver Near You</h2>
-          <Row xs={1} md={3} className="g-3">
-            <FoodGrid />
+          <Row xs={1} md={5}>
+            <FoodGrid unregister={true} />
           </Row>
         </div>
         <h3 className="signInText">

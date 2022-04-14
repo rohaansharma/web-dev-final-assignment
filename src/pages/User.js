@@ -1,12 +1,12 @@
 import React from "react";
-import Row from "react-bootstrap/Row";
-import FoodGrid from "../components/FoodGrid";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Button } from "react-bootstrap";
+import Row from "react-bootstrap/Row";
 import { useNavigate } from "react-router-dom";
+import UserGrid from "../components/UserGrid";
 
 const User = () => {
-  const { isAuthenticated, logout } = useAuth0();
+  const { isAuthenticated, logout, user } = useAuth0();
   const navigate = useNavigate();
 
   if (!isAuthenticated) {
@@ -32,14 +32,14 @@ const User = () => {
           Home
         </Button>
         <div className="userInfo">
-          <p>Name: XYZ</p>
-          <p>Email: email</p>
+          <p>Name: {user.name}</p>
+          <p>Email: {user.email}</p>
         </div>
         <div className="ordersDelivered">
           <div className="landingFoodContainer">
             <h2>Orders Delivered</h2>
-            <Row xs={1} md={3} className="g-3">
-              <FoodGrid />
+            <Row xs={1} md={5}>
+              <UserGrid email={user.email} />
             </Row>
           </div>
         </div>
