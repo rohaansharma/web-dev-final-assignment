@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Card, Button } from "react-bootstrap";
 import { useAuth0 } from "@auth0/auth0-react";
+import { FaWikipediaW } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function FoodCard({
@@ -13,6 +15,7 @@ function FoodCard({
 }) {
   const { isAuthenticated, user } = useAuth0();
   const [status, setStatus] = useState(deliveryStatus);
+  const navigate = useNavigate();
 
   const deliver = () => {
     const markDelivered = async () => {
@@ -33,13 +36,20 @@ function FoodCard({
         <Card.Text>Pickup Address : {pickupAddress}</Card.Text>
         <Card.Text>Delivery Address : {deliveryAddress}</Card.Text>
         {isAuthenticated && !status && (
-          <Button variant="primary" onClick={() => deliver()}>
+          <Button variant="outline-primary" onClick={() => deliver()}>
             DELIVER
           </Button>
         )}
         {isAuthenticated && status && (
           <Button variant="success">DELIVERED</Button>
         )}
+        <Button
+          className="wikipediaButton"
+          variant="outline-dark"
+          onClick={() => navigate("/wikipedia", { state: { foodName: name } })}
+        >
+          <FaWikipediaW size={23} />
+        </Button>
       </Card.Body>
     </Card>
   );

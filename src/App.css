@@ -67,3 +67,8 @@ body {
 .homePage {
   margin-top: 100px;
 }
+
+.wikipediaButton {
+  position: absolute;
+  left: 180px;
+}
