@@ -48,7 +48,7 @@ function FoodCard({
           variant="outline-dark"
           onClick={() => navigate("/wikipedia", { state: { foodName: name } })}
         >
-          <FaWikipediaW size={23} />
+          <FaWikipediaW size={21} />
         </Button>
       </Card.Body>
     </Card>

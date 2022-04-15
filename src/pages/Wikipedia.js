@@ -29,7 +29,12 @@ const Wikipedia = () => {
     text = info.query.pages[id].extract;
   }
 
-  return <div>{text}</div>;
+  return (
+    <div className="wikipediaPage">
+      <h2 className="wikipediaTitle">{foodName}</h2>
+      <p className="wikipediaParagraph">{text}</p>
+    </div>
+  );
 };
 
 export default Wikipedia;

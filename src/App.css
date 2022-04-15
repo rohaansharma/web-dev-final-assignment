@@ -31,8 +31,8 @@ body {
   top: 30px;
 }
 .landingFoodContainer {
+  margin-left: 50px;
   padding-top: 10px;
-  position: relative;
   left: 100px;
 }
 .signInText {
@@ -69,6 +69,15 @@ body {
 }
 
 .wikipediaButton {
-  position: absolute;
-  left: 180px;
+  position: relative;
+  left: 75px;
+}
+
+.wikipediaParagraph {
+  margin: 40px 150px;
+}
+
+.wikipediaTitle {
+  margin-top: 30px;
+  margin-left: 150px;
 }
