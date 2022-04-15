@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
+import { Navbar, Nav, Container } from "react-bootstrap";
 import axios from "axios";
 
 const Wikipedia = () => {
@@ -31,6 +32,18 @@ const Wikipedia = () => {
 
   return (
     <div className="wikipediaPage">
+      <Navbar bg="dark" variant="dark">
+        <Container>
+          <Nav className="me-auto">
+            <Nav.Link as={Link} to="/home">
+              Home
+            </Nav.Link>
+            <Nav.Link as={Link} to="/user">
+              Profile
+            </Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
       <h2 className="wikipediaTitle">{foodName}</h2>
       <p className="wikipediaParagraph">{text}</p>
     </div>

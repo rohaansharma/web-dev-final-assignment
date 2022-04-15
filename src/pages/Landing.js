@@ -18,7 +18,7 @@ const Landing = () => {
         <img className="foodImage" src={food} alt="food" />
         <h2 className="imageText">Food Delivery Volunteer Website</h2>
         <Button
-          variant="light"
+          variant="primary"
           id="signInButton"
           onClick={() => {
             navigate("/login");

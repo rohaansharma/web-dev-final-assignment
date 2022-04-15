@@ -1,44 +1,37 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Button, Navbar, Row, Nav, Container } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { Button, Navbar, Row, Nav, Container, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import UserGrid from "../components/UserGrid";
 
 const User = () => {
   const { isAuthenticated, logout, user } = useAuth0();
-  const navigate = useNavigate();
 
   if (!isAuthenticated) {
     return <h1>You are not authorised to access this page!</h1>;
   } else {
     return (
       <div>
-        <Button
-          variant="danger"
-          id="logOutButton"
-          onClick={() => {
-            logout();
-          }}
-        >
-          LOGOUT
-        </Button>
-        <Button
-          className="homeButton"
-          onClick={() => {
-            navigate("/home");
-          }}
-        >
-          Home
-        </Button>
-
-        <Navbar bg="light" variant="light">
+        <Navbar bg="dark" variant="dark">
           <Container>
-            <Navbar.Brand href="#home">Navbar</Navbar.Brand>
             <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#features">Features</Nav.Link>
-              <Nav.Link href="#pricing">Pricing</Nav.Link>
+              <Nav.Link as={Link} to="/home">
+                Home
+              </Nav.Link>
+              <Nav.Link as={Link} className="active" to="/user">
+                Profile
+              </Nav.Link>
             </Nav>
+            <Form inline>
+              <Button
+                variant="danger"
+                onClick={() => {
+                  logout();
+                }}
+              >
+                LOGOUT
+              </Button>
+            </Form>
           </Container>
         </Navbar>
 

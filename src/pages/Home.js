@@ -1,15 +1,13 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
 import FoodGrid from "../components/FoodGrid";
-import { Button } from "react-bootstrap";
+import { Button, Nav, Navbar, Container, Form } from "react-bootstrap";
 import { useAuth0 } from "@auth0/auth0-react";
-import { FaUser } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Home = () => {
   const { logout, isAuthenticated, isLoading, user } = useAuth0();
-  const navigate = useNavigate();
   const apiUrl = "http://localhost:8000/user";
 
   const addUser = async () => {
@@ -26,24 +24,28 @@ const Home = () => {
     addUser();
     return (
       <div>
-        <Button
-          variant="danger"
-          id="logOutButton"
-          onClick={() => {
-            logout();
-          }}
-        >
-          LOGOUT
-        </Button>
-
-        <Button
-          className="userIcon"
-          onClick={() => {
-            navigate("/user");
-          }}
-        >
-          <FaUser size={23} />
-        </Button>
+        <Navbar bg="dark" variant="dark">
+          <Container>
+            <Nav className="me-auto">
+              <Nav.Link as={Link} className="active" to="/home">
+                Home
+              </Nav.Link>
+              <Nav.Link as={Link} to="/user">
+                Profile
+              </Nav.Link>
+            </Nav>
+            <Form inline>
+              <Button
+                variant="danger"
+                onClick={() => {
+                  logout();
+                }}
+              >
+                LOGOUT
+              </Button>
+            </Form>
+          </Container>
+        </Navbar>
         <div className="homePage">
           <div className="landingFoodContainer">
             <h2 className="foodNearYou">Food To Deliver Near You</h2>
